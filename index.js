@@ -1,7 +1,7 @@
 let myForm = document.getElementById("myForm");
 let CardNumber = document.getElementById("CardNumber");
 let CVCNumber = document.getElementById("CVCNumber");
-let Amount = document.getElementById("amount");
+let Amount = document.getElementById("Amount");
 let FirstName = document.getElementById("FirstName");
 let LastName = document.getElementById("LastName");
 let City = document.getElementById("City");
@@ -26,43 +26,35 @@ function Validation() {
         errorMessages.push("CVC Number must have 4 characters")
     }
 
-    // if (Amount.value == 0) {
-    //     errorMessages.push("Amount is required")
-    // }
+    if (Amount.value == "" || Amount.value == "0" ) {
+        errorMessages.push("Amount is required")
+    }
 
-    if (FirstName.value === "" || FirstName.value == null) {
+    if (FirstName.value === "") {
         errorMessages.push("First Name is required")
     }
 
-    if (LastName.value === "" || LastName.value == null) {
+    if (LastName.value === "") {
         errorMessages.push("Last Name is required")
     }
 
-    if (City.value === "" || City.value == null) {
+    if (City.value === "") {
         errorMessages.push("City is required")
     }
 
-    // if (State.value ) {
-    //     errorMessages.push("State is required")
-    // }
+    if (State.value === "Pick a state" ) {
+        errorMessages.push("State is required")
+    }
 
-    if (PostalCode.value === "" || PostalCode.value == null) {
+    if (PostalCode.value === "") {
         errorMessages.push("Postal Code is required")
     }
 
-    if (Message.value === "" || Message.value == null) {
+    if (Message.value == "") {
         errorMessages.push("Message is required")
     }
 
-    if (errorMessages.length > 0){
-        console.log(errorMessages);
+    if (errorMessages.length > 0) {
         errorElement.innerText = errorMessages.join(", ");
     } 
 }
-
-// function ShowError(){
-//     if (errorMessages.length > 0){
-//         console.log(errorMessages);
-//         errorElement.innerText = errorMessages.join(", ");
-//     }
-// }
